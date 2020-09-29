@@ -5,23 +5,18 @@ import { unwrapResult } from '@reduxjs/toolkit';
 import ErrorLoginCard from '../../components/ErrorLoginCard/ErrorLoginCard';
 import GuestLoginCard from '../../components/GuestLoginCard/GuestLoginCard';
 import { useHistory } from 'react-router-dom';
-import './LoginForm.css'
+import { Input } from '../../components/Input'
+import styles from './LoginForm.module.css';
 
 export default function LoginForm() {
   const [errorUser, setErrorUser] = useState(false);
-  const [classButton, setclassButton] = useState('btn btn-primary btn-block');
-  const loginRef = useRef(null)
-  const passwordRef = useRef(null)
-  
+  const loginRef = useRef(null);
+  const passwordRef = useRef(null);
+  const buttondRef = useRef(null);
+
   const dispatch = useDispatch();
   const status = useSelector(selectStatus);
-  const history = useHistory()
-
-  function setToggleTime() {
-    setTimeout(() => {
-      setErrorUser(false)
-    }, 3000);
-  }
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -35,40 +30,32 @@ export default function LoginForm() {
 
   useEffect(() => {
     function redirectToAccueil() {
-      if(status === 'fulfilled') history.push('/accueil')
+      if (status === 'fulfilled') history.push('/accueil');
     }
-    redirectToAccueil()
-  }, [status, history])
-
-  
+    redirectToAccueil();
+  }, [status, history]);
 
   const button =
     status === 'pending' ? (
-      <button className='btn btn-primary btn-block' type='submit' disabled>
+      <button className={styles.buttonPending} type='submit' disabled>
         Valider
       </button>
     ) : (
-      <button className={classButton} type='submit'>
+      <button ref={buttondRef} className={styles.button} type='submit'>
         Valider
       </button>
     );
   return (
-    <div className='position-relative'>
-      <div className='row'>
-        <form onSubmit={handleSubmit} className='col-4 mx-auto'>
-          <input placeholder='identifiant...' className='form-control mb-2' type='text' ref={loginRef} />
-          <input placeholder='mot de passe...' className='form-control mb-2' type='password' ref={passwordRef} />
+    <div className={styles.wrapper}>
+      <div>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <Input ref={loginRef} id='login' type='text' >identifiant</Input>
+          <Input ref={passwordRef} id='password' type='password' >mot de passe</Input>
           {button}
         </form>
       </div>
-      <GuestLoginCard 
-      loginRef={loginRef} 
-      passwordRef={passwordRef} 
-      setclassButton={setclassButton}/>
-      <ErrorLoginCard 
-        errorUser={errorUser}
-        setToggleTime={setToggleTime}
-      />
+      <GuestLoginCard loginRef={loginRef} passwordRef={passwordRef} buttondRef={buttondRef}/>
+      <ErrorLoginCard errorUser={errorUser} setErrorUser={setErrorUser}/>
     </div>
   );
 }

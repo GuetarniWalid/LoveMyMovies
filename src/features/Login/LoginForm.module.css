@@ -1,0 +1,41 @@
+.form {
+    max-width: 500px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(1);
+    grid-gap: 15px;
+}
+
+.button {
+    background:rgb(180, 63, 42);
+    border-radius: 6px;
+    border: none;
+    height: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover{
+    background:rgba(180, 63, 42, 0.911);
+}
+
+.button:focus{
+    outline: none;
+}
+
+.buttonPending {
+    background:#b43f2ac0;
+    border-radius: 6px;
+    border: none;
+    height: 35px;
+    font-weight: bold;
+}
+
+.buttonPending:focus{
+    outline: none;
+}
+
+.wrapper{
+    position: relative;
+}
+

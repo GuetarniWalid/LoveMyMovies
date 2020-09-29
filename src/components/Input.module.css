@@ -1,0 +1,28 @@
+.wrapper {
+    position: relative;
+    margin: 10px;
+}
+
+.label {
+    position: absolute;
+    padding-left: 1px;
+    top: 0px;
+    color: rgba(255, 255, 255, 0.7);   
+}
+
+.input {
+    width: 100%;
+    background: transparent;
+    border: none;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.hr {
+    background-color: #fff;
+    height: 1px;
+    display: block;
+}
+
