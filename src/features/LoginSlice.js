@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import config from '../../config';
+import config from '../config';
 
 export const checkLogin = createAsyncThunk('login/checkLogin', async ({ username, password }) => {
     const dataToken = await fetch(`${config.baseUrl}authentication/token/new?api_key=${config.apiKey}`);

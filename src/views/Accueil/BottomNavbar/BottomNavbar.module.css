@@ -1,0 +1,17 @@
+.nav ul {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.nav li {
+    display: flex;
+    justify-content: space-between;
+    width: 27%;
+    border-bottom: 2px solid #fff;
+    font-size: 17px;
+    font-weight: bold;
+    padding-bottom: 13px;
+    cursor: pointer;
+}
