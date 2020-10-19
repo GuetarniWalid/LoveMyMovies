@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+ import React, { useEffect, useRef, useState } from 'react';
 import styles from './GuestLoginCard.module.css';
 import gsap from 'gsap';
 
@@ -26,7 +26,8 @@ export default function GuestLoginCard({ loginRef, passwordRef, buttondRef }) {
       boxShadow: '0 0 0 0 rgba(180, 63, 42, 1)'
     }, {
       duration: 1,
-      boxShadow: '0 0 0 18px rgba(180, 63, 42, 0.01)',
+      delay: 1,
+      boxShadow: '0 0 0 14px rgba(180, 63, 42, 0.01)',
       repeat: -1
     });
   }

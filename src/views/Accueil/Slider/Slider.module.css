@@ -1,0 +1,273 @@
+.bodyBackgroundCover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    background: #000;
+    background-position: left top;
+    z-index: -1;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 630px;
+    width: 100%;
+    padding: 30px 50px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 49px;
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid  rgba(255, 255, 255, 0.3);
+}
+
+.wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 50px;
+    height: 100%;
+    width: 1px;
+    border-right: 1px solid  rgba(255, 255, 255, 0.3);
+}
+
+.poster {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    background-size: 1920px auto;
+}
+
+
+/************* Wapper Dots *************/
+.dotWrapper {
+    text-align: center;
+}
+
+.dotWrapper>div {
+    display: inline-block;
+    position: relative;
+}
+
+.animDot {
+    position: absolute;
+    left: 5px;
+    top: 2.5px;
+    background: #fff;
+    border-radius: 10px;
+    width: 12px;
+    height: 12px;
+}
+
+.dot {
+    display: inline-block;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.452);
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/*************** Wrapper wrapperLeftAndRight **************/
+
+.wrapperLeftAndRight {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+.wrapperLeftAndRight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 450px;
+    height: 100%;
+    width: 1px;
+    border-right: 1px solid  rgba(255, 255, 255, 0.3);
+}
+
+/*************** Wrapper Left **************/
+
+.wrapperTitle {
+    width: 70%;
+}
+
+.wrapperTitle h1 {
+    font-size: 70px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.wrapperTitle p {
+    font-size: 16px;
+}
+
+.wrapperTitle>div {
+    display: flex;
+}
+
+
+.play {
+    height: 55px;
+    width: 300px;
+    color: black;
+    letter-spacing: 5px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.play:focus {
+    outline: none;
+}
+
+.like {
+    height: 55px;
+    width: 55px;
+    background: transparent;
+    border: 1px solid #fff;
+    margin-left: 10px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 0;
+}
+
+.like:focus {
+    outline: none;
+}
+
+.wrapperTrailer {
+    position: relative;
+}
+
+.trailer {
+    overflow: hidden;
+    margin-top: 40px;
+    width: 350px;
+    height: 180px;
+}
+
+.watch {
+    position: absolute;
+    bottom: 30px;
+    left: 250px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 15px;
+    letter-spacing: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.watch:focus {
+    outline: none;
+}
+
+.watchHiden {
+    display: none;
+}
+
+
+/**************** Wrapper Right ***************/
+
+.wrapperRight {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.wrapperDetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapperDetails ul{
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.genres {
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+.genres li {
+    margin-right: 15px;
+    font-weight: 600;
+    width: 133px;
+}
+
+.creatorUl {
+    padding-left: 0;
+}
+
+.stars {
+    text-align: right;
+}
+
+.stars+ul {
+    text-align: right;
+}
+
+.page {
+    transform: rotate(-90deg);
+    display: inline-block;
+    position: absolute;
+    right: 14px;
+    bottom: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 50;
+}
+
+
+@media screen and (min-width: 1920px) {
+    .poster {
+        background-size: 2300px auto;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .poster {
+        background-size: 1500px auto;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .poster {
+        background-size: 1100px auto;
+    }
+
+    .trailer, .watch {
+        display: none;
+    }
+
+}
+
+
+@media screen and (max-width: 700px) {
+    .poster {
+        background-size: 700px auto;
+    }
+
+
+}
+

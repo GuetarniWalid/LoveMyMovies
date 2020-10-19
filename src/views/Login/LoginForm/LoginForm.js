@@ -1,11 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { checkLogin, selectStatus } from './LoginSlice';
+import { checkLogin, selectStatus } from '../../../features/LoginSlice';
 import { unwrapResult } from '@reduxjs/toolkit';
-import ErrorLoginCard from '../../components/ErrorLoginCard/ErrorLoginCard';
-import GuestLoginCard from '../../components/GuestLoginCard/GuestLoginCard';
+import ErrorLoginCard from '../ErrorLoginCard/ErrorLoginCard';
+import GuestLoginCard from '../GuestLoginCard/GuestLoginCard';
 import { useHistory } from 'react-router-dom';
-import { Input } from '../../components/Input'
+import { Input } from '../Input/Input'
 import styles from './LoginForm.module.css';
 
 export default function LoginForm() {

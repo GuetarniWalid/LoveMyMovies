@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import LoginForm from '../features/Login/LoginForm';
-import Title from '../components/Title';
+import LoginForm from './LoginForm/LoginForm';
+import Title from '../../components/Title';
 
 export default function Login() {
   return (
