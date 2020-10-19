@@ -4,8 +4,10 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
-    height: 65px;
+    height: 10%;
     font-size: 13px;
+    max-width: 1500px;
+    margin: 0 auto;
 }
 
 .left {
